@@ -1,0 +1,24 @@
+.BottomButton {
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.BottonIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.ButtonName {
+    -unity-text-outline-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    -unity-font: url('project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&guid=984a6cf9db0e0a542932c9474e806d4c&type=3#Jura-VariableFont_wght');
+    -unity-text-align: upper-center;
+    -unity-font-definition: none;
+}
+
+.ToDoElement:hover {
+    background-color: rgba(183, 183, 183, 0.42);
+}

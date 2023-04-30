@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/AppUI-Style.uss?fileID=7433441132597879392&amp;guid=7cf2fd36ad8ee1a4e9229d840a65b1dd&amp;type=3#AppUI-Style" />
+    <ui:VisualElement name="ToDoElement" class="ToDoElement" style="width: 100%; flex-direction: row; align-items: center; justify-content: space-between; height: auto; border-top-left-radius: 15%; border-bottom-left-radius: 15%; border-top-right-radius: 15%; border-bottom-right-radius: 15%;">
+        <ui:VisualElement name="LeftSide" style="height: 90%; width: 100%; flex-direction: row; align-items: center; justify-content: flex-start;">
+            <ui:VisualElement name="TaskIcon" style="width: 50px; height: 50px; min-width: 50px; min-height: 50px;">
+                <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" balance-x="50" style="align-items: center; justify-content: space-around; position: relative; left: 0;">
+                    <ui:VisualElement name="Icon" style="background-image: url(&apos;project://database/Assets/Graphics/UI%20Icons/open-book.png?fileID=21300000&amp;guid=a845ada6a424420449bb6eabdd387610&amp;type=3#open-book&apos;); min-width: 50px; min-height: 50px;" />
+                </AspectRatioPanel>
+            </ui:VisualElement>
+            <ui:VisualElement name="TextContrainer" style="padding-left: 1%;">
+                <ui:Label text="Some task here" display-tooltip-when-elided="true" name="TaskName" style="-unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-font-definition: none; color: rgb(0, 0, 0); font-size: 40px;" />
+                <ui:VisualElement name="TagList" style="flex-direction: row; align-items: center;">
+                    <ui:Label text="#ATag" display-tooltip-when-elided="true" name="Tags" style="color: rgb(0, 0, 0); font-size: 22px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="TaskCircle" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; width: 50px; height: 50px; background-image: url(&apos;project://database/Assets/Graphics/UI%20Icons/timer.png?fileID=21300000&amp;guid=cc752ab5a4720384d964fe700b44bb27&amp;type=3#timer&apos;); -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

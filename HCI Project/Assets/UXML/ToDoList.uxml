@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="ToDoList" style="width: 100%; height: 100%; background-color: rgb(73, 221, 241); border-top-left-radius: 5%; border-bottom-left-radius: 5%; border-top-right-radius: 5%; border-bottom-right-radius: 5%; justify-content: flex-start; align-items: center; padding-left: 4%; padding-right: 4%; padding-top: 4%; padding-bottom: 4%;" />
+</ui:UXML>
