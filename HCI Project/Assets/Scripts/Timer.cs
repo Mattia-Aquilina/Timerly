@@ -8,11 +8,13 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour , IPointerClickHandler
 {
+    [SerializeField] int MaxDuration = 120;
     [SerializeField] TextMeshProUGUI timerValue;
     [SerializeField] Image timerCircle;
-    [SerializeField] float TimerDuration = 25f;
+    [SerializeField] public float TimerDuration = 0f;
     [SerializeField] [Range(1, 20)] int precision;
 
+    public int GetMaxDuration() => MaxDuration;
     public float LeftTimer;
     //variabile che indica lo stato del timer, false -> timer off true -> timer on
     private bool timerOn = false;
@@ -32,11 +34,16 @@ public class Timer : MonoBehaviour , IPointerClickHandler
             //Stampiamo a video
             float minutes = Mathf.FloorToInt(LeftTimer / 60);
             float seconds = Mathf.FloorToInt(LeftTimer % 60);
-            timerValue.text = string.Format("{0:00}:{1:00}", minutes , seconds);
+            timerValue.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
             //aggiorniamo il valore del cerchio
-            timerCircle.fillAmount = (float) Math.Round(LeftTimer/(TimerDuration*60) , precision);
-        }    
+            timerCircle.fillAmount = (float)Math.Round(LeftTimer / (TimerDuration * 60), precision);
+        }else if(!timerOn)
+        {
+
+            timerValue.text = TimerDuration + ":00";
+
+        }
     }
 
     private void OnStateChange(AppState newState)
@@ -71,4 +78,5 @@ public class Timer : MonoBehaviour , IPointerClickHandler
     {
         timerOn = false;
     }
+
 }

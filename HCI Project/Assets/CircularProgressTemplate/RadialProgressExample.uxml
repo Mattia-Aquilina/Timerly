@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/CircularProgressTemplate/RadialProgress.uss?fileID=7433441132597879392&amp;guid=b8ada74820b72d34289c11fbff3de9e6&amp;type=3#RadialProgress" />
+    <ui:VisualElement style="align-items: center; width: 100%; height: 100%;">
+        <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" style="position: relative; left: 0; width: 100%; height: 100%; top: 0;">
+            <MyUILibrary.RadialProgress progress="87.1" style="width: 100%; height: 100%; align-items: center;" />
+        </AspectRatioPanel>
+    </ui:VisualElement>
+</ui:UXML>

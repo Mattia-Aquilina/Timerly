@@ -1,0 +1,13 @@
+.Slot {
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Icon {
+   
+    background-image: url('project://database/Assets/Graphics/UI%20Icons/checklist.png?fileID=21300000&guid=db6bc60160cdbd545a477e0bd353b360&type=3#checklist');
+    -unity-background-scale-mode: scale-and-crop;
+    width: 75px;
+    height: 75px;
+}

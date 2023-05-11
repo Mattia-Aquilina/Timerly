@@ -1,0 +1,88 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="RadialProgressExample" src="project://database/Assets/CircularProgressTemplate/RadialProgressExample.uxml?fileID=9197481963319205126&amp;guid=2e81c2ec11ed75f4aa436f78e20ac78d&amp;type=3#RadialProgressExample" />
+    <Style src="project://database/Assets/UI%20Toolkit/BottomBar.uss?fileID=7433441132597879392&amp;guid=41e248aa1054afb4a8617280bdf61f96&amp;type=3#BottomBar" />
+    <Style src="project://database/Assets/UI%20Toolkit/ToDoList.uss?fileID=7433441132597879392&amp;guid=6bd6107327da5a04997a2c768073ebd8&amp;type=3#ToDoList" />
+    <ui:VisualElement name="Container" style="width: 100%; height: 100%; background-color: rgba(174, 168, 211, 0.53);">
+        <ui:VisualElement name="Title" style="height: 10%; align-items: flex-start;">
+            <ui:Label text="Timerly" display-tooltip-when-elided="true" name="TitleText" style="font-size: 100%; color: rgb(0, 0, 0); -unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); padding-left: 5%; padding-right: 0; padding-top: 5%; padding-bottom: 0; -unity-font-definition: none;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="MainUiContainer" style="height: 83%; align-items: center; justify-content: flex-start;">
+            <ui:VisualElement name="GoalsContainer" style="width: 100%; height: 35%;">
+                <ui:ScrollView scroll-deceleration-rate="0.62" elasticity="1.04" mode="Horizontal" touch-scroll-type="Elastic" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" style="width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: flex-start;">
+                    <ui:VisualElement name="GoalPadding" style="height: 100%; width: 100%; align-items: center; justify-content: center; margin-left: 1%; margin-right: 10%;">
+                        <ui:VisualElement name="GoalContainer" style="align-items: center; justify-content: space-between; height: 80%; width: 100%; background-color: rgb(255, 190, 81); border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; padding-left: 8%; padding-right: 8%; padding-top: 8%; padding-bottom: 8%; margin-right: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;">
+                            <ui:Instance template="RadialProgressExample" name="RadialProgressExample" style="height: 65%; justify-content: center; width: 100%;" />
+                            <ui:VisualElement name="textContent" style="height: 35%; width: 100%; align-items: flex-start; justify-content: space-around;">
+                                <ui:Label text="Study hours" display-tooltip-when-elided="true" name="Title" style="font-size: 30%; -unity-font-style: bold; color: rgb(0, 0, 0); -unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-font-definition: none;" />
+                                <ui:Label text="keep going, you are almost there" display-tooltip-when-elided="true" name="Desc" style="color: rgb(0, 0, 0); font-size: 25%; flex-wrap: nowrap; white-space: normal; -unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-font-definition: none;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+            <ui:VisualElement name="ToDo-list" style="width: 100%; height: 65%; align-items: center;">
+                <ui:VisualElement name="ToDoHeader" style="height: 10%; align-items: center; justify-content: space-between; flex-direction: row; width: 90%;">
+                    <ui:Label text="To-Do List" display-tooltip-when-elided="true" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-font-definition: none;" />
+                    <ui:VisualElement elasticity="0.1" style="height: 50%; width: 100%; align-items: center; flex-direction: row-reverse;">
+                        <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" style="position: relative;">
+                            <ui:VisualElement name="CreateToDo" style="width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Graphics/UI%20Icons/plus-symbol-button.png?fileID=21300000&amp;guid=a13675f0febdc2d41b573b1fd2ec03bf&amp;type=3#plus-symbol-button&apos;);" />
+                        </AspectRatioPanel>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:ScrollView scroll-deceleration-rate="0.93" elasticity="0.05" touch-scroll-type="Elastic" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" horizontal-page-size="-1" style="width: 90%; height: 90%;">
+                    <ui:VisualElement name="TagToDo" class="TagToDo-Entry" style="flex-direction: row; align-items: flex-start; max-width: 100%; max-height: 100%;">
+                        <ui:VisualElement name="TagName" style="height: 100%; width: 33%; flex-direction: row; align-items: center;">
+                            <ui:Label text="#SomeTagHere" display-tooltip-when-elided="true" name="TagName" style="-unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-font-definition: none; font-size: 50%; color: rgb(0, 0, 0); white-space: normal;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ToDo-list-tag" style="width: 67%; height: 100%; background-color: rgb(116, 255, 97); border-top-left-radius: 50px; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 50px; padding-left: 2%; padding-right: 2%; padding-top: 5%; padding-bottom: 5%;">
+                            <ui:VisualElement name="ToDo-list-tag-voice" class="ToDoList-Entry">
+                                <ui:Label text="Some task name" display-tooltip-when-elided="true" name="TaskName" style="-unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-font-definition: none; font-size: 30%; color: rgb(0, 0, 0); border-top-left-radius: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                                <ui:VisualElement style="width: 30%; height: 100%; flex-direction: row-reverse; justify-content: flex-end;">
+                                    <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" usage-hints="None" style="left: 0; position: relative; background-image: none; height: auto; width: 30%; align-items: center;">
+                                        <ui:VisualElement name="Icon" class="Icon" style="width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Graphics/UI%20Icons/timer.png?fileID=21300000&amp;guid=cc752ab5a4720384d964fe700b44bb27&amp;type=3#timer&apos;);" />
+                                    </AspectRatioPanel>
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="ToDo-list-tag-voice" style="flex-direction: row; justify-content: space-between; margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; align-items: center;">
+                                <ui:Label text="Some task name" display-tooltip-when-elided="true" name="TaskName" style="-unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-font-definition: none; font-size: 30%; color: rgb(0, 0, 0); border-top-left-radius: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                                <ui:VisualElement style="width: 30%; height: 100%; flex-direction: row-reverse; justify-content: flex-end;">
+                                    <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" usage-hints="None" style="left: 0; position: relative; background-image: none; height: auto; width: 30%; align-items: center;">
+                                        <ui:VisualElement name="Icon" class="Icon" style="width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Graphics/UI%20Icons/timer.png?fileID=21300000&amp;guid=cc752ab5a4720384d964fe700b44bb27&amp;type=3#timer&apos;);" />
+                                    </AspectRatioPanel>
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="BottomBar" style="height: 7%; flex-direction: row; justify-content: space-between; align-items: center; -unity-background-image-tint-color: rgb(0, 255, 255); background-color: rgb(148, 124, 176);">
+            <ui:VisualElement name="ToDo" class="Slot" style="height: 100%;">
+                <ui:VisualElement style="width: 30%; height: 50%;">
+                    <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" usage-hints="None" style="left: 0; position: relative; background-image: none; height: auto; width: 30%; align-items: center;">
+                        <ui:VisualElement name="Icon" class="Icon" style="width: 100%; height: 100%;" />
+                    </AspectRatioPanel>
+                </ui:VisualElement>
+                <ui:Label text="Label" display-tooltip-when-elided="true" style="font-size: 30%; -unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-text-align: upper-center; color: rgb(0, 0, 0); -unity-font-definition: none;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Bar" style="width: 5px; border-left-width: 5px; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); height: 80%;" />
+            <ui:VisualElement name="Timer" class="Slot" style="height: 100%;">
+                <ui:VisualElement style="width: 30%; height: 50%;">
+                    <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" usage-hints="None" style="left: 0; position: relative; background-image: none; height: auto; width: 30%; align-items: center;">
+                        <ui:VisualElement name="Icon" class="Icon" style="width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Graphics/UI%20Icons/timer.png?fileID=21300000&amp;guid=cc752ab5a4720384d964fe700b44bb27&amp;type=3#timer&apos;);" />
+                    </AspectRatioPanel>
+                </ui:VisualElement>
+                <ui:Label text="Label" display-tooltip-when-elided="true" style="font-size: 30%; -unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-text-align: upper-center; color: rgb(0, 0, 0); -unity-font-definition: none;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Bar" style="width: 5px; border-left-width: 5px; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); height: 80%;" />
+            <ui:VisualElement name="Stats" class="Slot" style="height: 100%;">
+                <ui:VisualElement style="width: 30%; height: 50%;">
+                    <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" usage-hints="None" style="left: 0; position: relative; background-image: none; height: auto; width: 30%; align-items: center;">
+                        <ui:VisualElement name="Icon" class="Icon" style="width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Graphics/UI%20Icons/data-management.png?fileID=21300000&amp;guid=f0795a0224db91e4e95c0b38ace7c623&amp;type=3#data-management&apos;);" />
+                    </AspectRatioPanel>
+                </ui:VisualElement>
+                <ui:Label text="Label" display-tooltip-when-elided="true" style="font-size: 30%; -unity-font: url(&apos;project://database/Assets/Jura-VariableFont_wght.ttf?fileID=12800000&amp;guid=984a6cf9db0e0a542932c9474e806d4c&amp;type=3#Jura-VariableFont_wght&apos;); -unity-text-align: upper-center; color: rgb(0, 0, 0); -unity-font-definition: none;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
