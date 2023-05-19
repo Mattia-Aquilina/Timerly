@@ -71,11 +71,13 @@ public class Timer : MonoBehaviour , IPointerClickHandler
         //calcoliamo la durata del timer e impostiamo il valore corretto del testo
         LeftTimer = TimerDuration*60;
         timerValue.text = string.Format("{0:00}:{1:00}", TimerDuration * 60, 0);
+        GetComponentInChildren<TimeSelector>().enabled = false;
         timerOn = true;
     }
 
     private void StopTimer()
     {
+        GetComponentInChildren<TimeSelector>().enabled = true;
         timerOn = false;
     }
 

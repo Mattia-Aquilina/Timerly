@@ -21,6 +21,7 @@ public class TimeSelector : MonoBehaviour, IDragHandler
     }
     public void OnDrag(PointerEventData eventData)
     {
+        
         var screen = new Vector2(Screen.width / 2, Screen.height / 2);
         var vector = eventData.position - screen;
         var yAxys = new Vector2(0, 1);
@@ -36,6 +37,7 @@ public class TimeSelector : MonoBehaviour, IDragHandler
             _rotation = Mathf.Rad2Deg * Mathf.Acos(Vector2.Dot(vector, yAxys));
         else
             _rotation = 360f - Mathf.Rad2Deg * Mathf.Acos(Vector2.Dot(vector, yAxys));
+
 
         currentRotation = _rotation;
         GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, -_rotation);

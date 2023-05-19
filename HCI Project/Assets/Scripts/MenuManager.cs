@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 public class MenuManager : VisualElement
@@ -16,30 +18,32 @@ public class MenuManager : VisualElement
 
     public void OnGeometryChanged(GeometryChangedEvent evt)
     {
-        ScreenCenter = this.Q("ScreenCenter");
+        ScreenCenter = this.Q("BottomBar");
 
         this.Q("ToDo")?.RegisterCallback<ClickEvent>(ev => OpenToDo());
-        this.Q("Timer")?.RegisterCallback<ClickEvent>(ev => TimerState());
-        this.Q("Progress")?.RegisterCallback<ClickEvent>(ev => ShowProgress());
+        this.Q("Timer")?.RegisterCallback<ClickEvent>(ev => OpenTimer());
+        this.Q("Stats")?.RegisterCallback<ClickEvent>(ev => OpenStats());
     }
 
     private void OnStateChanged(AppState appState)
     {
-
+        
     }
     private void OpenToDo()
     {
-
+        Debug.Log("ToDO pressed");
+        AppManager.Instance.OpenToDo();
     }
 
-    private void TimerState()
+    private void OpenTimer()
     {
-        ScreenCenter.style.display = DisplayStyle.None;
-        AppManager.Instance.ChangeState(AppState.timer);
+        Debug.Log("timer pressed");
+        AppManager.Instance.OpenTimer();
     }
 
-    private void ShowProgress()
+    private void OpenStats()
     {
-
+        Debug.Log("Stats pressed");
+        AppManager.Instance.OpenStats();
     }
 }

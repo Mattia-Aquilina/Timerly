@@ -17,7 +17,6 @@
 
     .radial-progress__label {
         -unity-font: url('project://database/Assets/Jura-VariableFont_wght.ttf');
-        
         width: 100%;
         font-size: 500%;
         -unity-text-align: middle-center;

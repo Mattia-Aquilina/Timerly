@@ -6,13 +6,15 @@ using UnityEngine;
 public class AppManager : StaticInstances<AppManager>
 {
     // Start is called before the first frame update
-    [SerializeField] Canvas home;
-    [SerializeField] Canvas timer;
+    [SerializeField] Canvas ToDo;
+    [SerializeField] Canvas Timer;
+
     public AppState appState { get; private set; } = AppState.homeScreen;
     public static event Action<AppState> AppStateChanged;
     void Awake()
     {
         base.Awake();
+        Timer.enabled = false;
     }
 
     public void ChangeState(AppState newState)
@@ -23,7 +25,7 @@ public class AppManager : StaticInstances<AppManager>
             case AppState.homeScreen:
                 break;
             case AppState.timer:
-                HandleTimer();
+                //HandleTimer();
                 break;
             case AppState.timerRunning:
                 break;
@@ -37,10 +39,25 @@ public class AppManager : StaticInstances<AppManager>
         AppStateChanged.Invoke(newState);
     }
 
-    private void HandleTimer()
+    public void OpenTimer()
     {
-        home.gameObject.SetActive(false);
-        timer.gameObject.SetActive(true);
+        DisableAllUI();
+        Timer.enabled = true;
+    }
+    public void OpenToDo()
+    {
+        DisableAllUI();
+        ToDo.enabled = true;
+    }
+    public void OpenStats()
+    {
+
+    }
+
+    private void DisableAllUI()
+    {
+        Timer.enabled = false;
+        ToDo.enabled = false;
     }
 }
 
